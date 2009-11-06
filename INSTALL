@@ -1,0 +1,2 @@
+Clone it to ~/.vim and source ~/.vim/vimrc in your vimrc.
+$ echo "source ~/.vim/vimrc" >> ~/.vimrc
