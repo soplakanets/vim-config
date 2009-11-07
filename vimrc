@@ -16,6 +16,8 @@ syntax on
 set hlsearch
 " Incremental search. Search items highlighted as you type.
 set incsearch
+" Ingore case by default on search, etc.
+set ic
 
 " Display line numbers.
 set nu
@@ -51,4 +53,12 @@ map <Leader>8 :tabnext 8<CR>
 map <Leader>9 :tabnext 9<CR>
 
 map <Leader>t :tabnew<CR>
+
+
+" PLUGIN SETTINGS
+
+" VCSCommand
+" Disbale coloring in git diff command.
+let VCSCommandGitDiffOpt='--no-color'
+
 
