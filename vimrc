@@ -2,6 +2,8 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
+set background=dark
+
 " Show current and last used command.
 set showcmd
 " Show current mode.
@@ -25,8 +27,8 @@ set nu
 set smartindent
 
 " Tab = 4 spaces
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set autoindent
 
@@ -36,8 +38,6 @@ set wildmode=list:longest
 set wildmenu
 
 " Display tabs and trailing spaces.
-set list
-set listchars=tab:▷⋅,trail:⋅,nbsp:⋅
 
 
 " HOTKEYS
@@ -61,4 +61,14 @@ map <Leader>t :tabnew<CR>
 " Disbale coloring in git diff command.
 let VCSCommandGitDiffOpt='--no-color'
 
-
+if has("gui_running")
+    colorscheme ir_black
+    " Use all vertical and gorizontal space.
+    set fuoptions=maxvert,maxhorz,background:Normal
+    " Disable right sclorllbar.
+    set guioptions-=r
+    " Disable left scrollbar.
+    set guioptions-=L
+    " Hide toolbar by default.
+    set guioptions-=T
+endif
