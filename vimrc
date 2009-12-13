@@ -75,3 +75,6 @@ if has("gui_running")
     " Hide toolbar by default.
     set guioptions-=T
 endif
+
+au BufWritePost *.py silent! !ctags -R &
+
