@@ -62,6 +62,9 @@ map <Leader>t :tabnew<CR>
 let VCSCommandGitDiffOpt='--no-color'
 
 if has("gui_running")
+    " Don't use antialising.
+    set antialias!
+    set guifont=Monaco:h14
     colorscheme ir_black
     " Use all vertical and gorizontal space.
     set fuoptions=maxvert,maxhorz,background:Normal
