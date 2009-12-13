@@ -76,5 +76,7 @@ if has("gui_running")
     set guioptions-=T
 endif
 
+" Auto re-generate ctags file on save.
+" Can take long time on large directories.
 au BufWritePost *.py silent! !ctags -R &
 
