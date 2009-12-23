@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <name>"
+    exit 1
+fi
+
+pydoc $1 | more
+
