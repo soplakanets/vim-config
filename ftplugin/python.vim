@@ -2,12 +2,16 @@
 map <buffer> <C-m> :w<CR>:!/usr/bin/env python % <CR>
 
 " Use omni completion method from Python plugin.
-set omnifunc=pythoncomplete#Complete
+setlocal omnifunc=pythoncomplete#Complete
 
 " Do not show PyDoc in asplit at window top. Annoying.
-set completeopt-=preview
+setlocal completeopt-=preview
 
 " 2 spaces for tabs in python.
 setlocal shiftwidth=2
 setlocal softtabstop=2
+
+setlocal complete+=k~/.vim/syntax/python.vim isk+=.,(
+
+set keywordprg=~/.vim/bin/pydoc-more
 
