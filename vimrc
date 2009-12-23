@@ -32,8 +32,8 @@ set laststatus=2
 set smartindent
 
 " Tab = 4 spaces
-set shiftwidth=2
-set softtabstop=2
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 set autoindent
 
