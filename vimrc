@@ -18,11 +18,16 @@ syntax on
 set hlsearch
 " Incremental search. Search items highlighted as you type.
 set incsearch
-" Ingore case by default on search, etc.
-set ic
+set smartcase
 
 " Display line numbers.
-set nu
+set number
+
+set ruler
+
+" Status line formatting
+set statusline=%<%f%h%m%r\ 0x%b\ %{&encoding}\ \ %l,%c%V  
+set laststatus=2
 
 set smartindent
 
@@ -37,7 +42,32 @@ set wildmode=list:longest
 " Enable ctrl-n and ctrl-p to scroll thru matches.
 set wildmenu
 
-" Display tabs and trailing spaces.
+" Set syntax highlighting for buffer that comes from MySQL client called by \e
+au BufNewFile,BufRead *tmp/sql* set syntax=sql
+
+
+function! SuperCleverTab() 
+    " check if at beginning of line or after a space 
+    if strpart( getline('.'), 0, col('.')-1 ) =~ '^\s*$' 
+      return "\<Tab>" 
+    else 
+       " do we have omni completion available 
+       if &omnifunc != ''  
+          " use omni-completion 1. priority 
+          return "\<C-X>\<C-O>" 
+       elseif &dictionary != ''  
+          " no omni completion, try dictionary completion
+          return "\<C-X>\<C-K>" 
+       else 
+          " no omni completion or dictionary completion 
+          " use known-word completion 
+          return "\<C-N>" 
+      endif 
+    endif 
+endfunction 
+
+" bind function to the tab key
+inoremap <Tab> <C-R>=SuperCleverTab()<CR>
 
 
 " HOTKEYS
@@ -65,7 +95,7 @@ if has("gui_running")
     " Don't use antialising.
     set antialias!
     set guifont=Monaco:h14
-    colorscheme ir_black
+    colorscheme desert
     " Use all vertical and gorizontal space.
     set fuoptions=maxvert,maxhorz,background:Normal
     " Disable right sclorllbar.
