@@ -11,7 +11,5 @@ setlocal completeopt-=preview
 setlocal shiftwidth=2
 setlocal softtabstop=2
 
-setlocal complete+=k~/.vim/syntax/python.vim isk+=.,(
-
 set keywordprg=~/.vim/bin/pydoc-more
 
