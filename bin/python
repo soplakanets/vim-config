@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ -d "./env/bin" ]; then
+    echo "USING ENV SPECIFIC PYTHON"
+    ./env/bin/python $@
+else
+    echo "USING DEFAULT PYTHON"
+    python $@
+fi
+
