@@ -94,7 +94,7 @@ let VCSCommandGitDiffOpt='--no-color'
 if has("gui_running")
     " Don't use antialising.
     set antialias!
-    set guifont=Monaco:h14
+    set guifont=Monaco:h16
     colorscheme desert
     " Use all vertical and gorizontal space.
     set fuoptions=maxvert,maxhorz,background:Normal
@@ -105,8 +105,4 @@ if has("gui_running")
     " Hide toolbar by default.
     set guioptions-=T
 endif
-
-" Auto re-generate ctags file on save.
-" Can take long time on large directories.
-au BufWritePost *.py silent! !ctags -R &
 
