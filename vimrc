@@ -93,11 +93,11 @@ let VCSCommandGitDiffOpt='--no-color'
 
 if has("gui_running")
     " Don't use antialising.
-    set antialias!
-    set guifont=Monaco:h16
+    " set antialias!
+    " set guifont=Monaco:h16
     colorscheme desert
     " Use all vertical and gorizontal space.
-    set fuoptions=maxvert,maxhorz,background:Normal
+    " set fuoptions=maxvert,maxhorz,background:Normal
     " Disable right sclorllbar.
     set guioptions-=r
     " Disable left scrollbar.
