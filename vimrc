@@ -99,7 +99,12 @@ map <Leader>t :tabnew<CR>
 let VCSCommandGitDiffOpt='--no-color'
 
 if has("gui_running")
-    set guifont=Inconsolata\ Medium\ 16
+    if has("gui_macvim")
+        set fuopt+=maxhorz
+        set guifont=Menlo\ Regular:h18
+    else
+        set guifont=Inconsolata\ Medium\ 16
+    endif
 
     colorscheme desert
     
@@ -113,4 +118,5 @@ if has("gui_running")
     " Always show tab bar
     set showtabline=2
 endif
+
 
