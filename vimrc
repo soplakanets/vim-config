@@ -52,6 +52,9 @@ set wildmenu
 " Set syntax highlighting for buffer that comes from MySQL client called by \e
 au BufNewFile,BufRead *tmp/sql* set syntax=sql
 
+" Detect JSON files
+au BufRead,BufNewFile *.json setfiletype javascript 
+
 
 function! SuperCleverTab() 
     " check if at beginning of line or after a space 
