@@ -55,6 +55,9 @@ au BufNewFile,BufRead *tmp/sql* set syntax=sql
 " Detect JSON files
 au BufRead,BufNewFile *.json setfiletype javascript 
 
+" Detect .ejs files as HTML
+au BufRead,BufNewFile *.ejs setfiletype html 
+
 
 function! SuperCleverTab() 
     " check if at beginning of line or after a space 
@@ -92,7 +95,14 @@ map <Leader>7 :tabnext 7<CR>
 map <Leader>8 :tabnext 8<CR>
 map <Leader>9 :tabnext 9<CR>
 
+" Easy split windows bavigation
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
 map <Leader>t :tabnew<CR>
+map <Leader>n :NERDTreeToggle<CR>
 
 
 " PLUGIN SETTINGS
