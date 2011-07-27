@@ -44,6 +44,11 @@ set softtabstop=4
 set expandtab
 set autoindent
 
+" No annoying bells
+set noerrorbells
+set visualbell
+set t_vb=
+
 " Make cmdline tab completion similar to bash.
 set wildmode=list:longest
 " Enable ctrl-n and ctrl-p to scroll thru matches.
@@ -57,6 +62,9 @@ au BufRead,BufNewFile *.json setfiletype javascript
 
 " Detect .ejs files as HTML
 au BufRead,BufNewFile *.ejs setfiletype html 
+
+" Ruby syntax for Vagrant config files.
+au BufRead,BufNewFile Vagrantfile setfiletype ruby
 
 
 function! SuperCleverTab() 
