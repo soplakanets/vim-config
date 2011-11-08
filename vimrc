@@ -3,7 +3,7 @@
 set nocompatible
 
 " What is the console background? Sets apropriate color scheme
-set background=dark
+set background=light
 
 " Show current and last used command
 set showcmd
@@ -120,6 +120,7 @@ map <Leader>n :NERDTreeToggle<CR>
 let VCSCommandGitDiffOpt='--no-color'
 
 if has("gui_running")
+    set background=dark
     if has("gui_macvim")
         set fuopt+=maxhorz
         set guifont=Menlo\ Regular:h18
@@ -140,4 +141,10 @@ if has("gui_running")
     set showtabline=2
 endif
 
+" Configure browser for haskell_doc.vim
+let g:haddock_browser = "open"
+let g:haddock_browser_callformat = "%s %s"
 
+" Highlight lines longer than 80 chars
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
