@@ -1,3 +1,6 @@
+" Initialize plugins from 'bundle' directory.
+call pathogen#infect()
+
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect
 set nocompatible
@@ -65,6 +68,9 @@ au BufRead,BufNewFile *.ejs setfiletype html
 
 " Ruby syntax for Vagrant config files.
 au BufRead,BufNewFile Vagrantfile setfiletype ruby
+
+" Try to use file template when creating new file
+autocmd! BufNewFile * silent! 0r ! ~/.vim/bin/template %
 
 
 function! SuperCleverTab() 
@@ -147,4 +153,4 @@ let g:haddock_browser_callformat = "%s %s"
 
 " Highlight lines longer than 80 chars
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+match OverLength /\%121v.\+/

@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -o nounset
+set -o errexit
+
+FILE=$1
+FILE_NAME=$(basename $1)
+FILE_TYPE=${FILE_NAME#*.}
+MODULE_NAME=${FILE_NAME%%.*}
+TEMPLATE_FILE="${HOME}/.vim/templates/template.${FILE_TYPE}"
+
+if [ -f "$TEMPLATE_FILE" ]; then
+    cat $TEMPLATE_FILE | sed \
+        -e "s/\%MODULE_NAME\%/${MODULE_NAME}/g"\
+        -e "s/\%FILE_NAME\%/${FILE_NAME}/g"\
+        -e "s/\%FILE_TYPE\%/${FILE_TYPE}/g"
+else
+    echo ''
+fi
+
