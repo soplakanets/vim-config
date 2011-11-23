@@ -153,4 +153,4 @@ let g:haddock_browser_callformat = "%s %s"
 
 " Highlight lines longer than 80 chars
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%121v.\+/
+match OverLength /\%81v.\+/
