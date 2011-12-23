@@ -154,3 +154,7 @@ let g:haddock_browser_callformat = "%s %s"
 " Highlight lines longer than 80 chars
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
+
+" Configure vimerl
+let g:erlangRefactoring = 1
+let g:erlangWranglerPath = '/usr/local/share/wrangler/'

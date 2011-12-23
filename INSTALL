@@ -1,2 +1,2 @@
-Clone it to ~/.vim and source ~/.vim/vimrc in your vimrc.
+$ git clone --recursive git@github.com:soplakanets/vim-config.git ~/.vim
 $ echo "source ~/.vim/vimrc" >> ~/.vimrc
