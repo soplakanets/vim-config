@@ -97,7 +97,12 @@ endfunction
 inoremap <Tab> <C-R>=SuperCleverTab()<CR>
 
 
+
 " HOTKEYS
+
+" Reassign Leader Key
+let mapleader=","
+
 " Easy tab navigation.
 map <Leader>1 :tabnext 1<CR>
 map <Leader>2 :tabnext 2<CR>
