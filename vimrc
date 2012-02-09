@@ -163,3 +163,7 @@ match OverLength /\%81v.\+/
 " Configure vimerl
 let g:erlangRefactoring = 1
 let g:erlangWranglerPath = '/usr/local/share/wrangler/'
+
+" Configure snipMate
+let g:snips_trigger_key = '<c-space>'
+
