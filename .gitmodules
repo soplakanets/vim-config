@@ -25,3 +25,6 @@
 [submodule "bundle/grep"]
 	path = bundle/grep
 	url = git://github.com/vim-scripts/grep.vim.git
+[submodule "_pathogen"]
+	path = _pathogen
+	url = git://github.com/tpope/vim-pathogen.git
