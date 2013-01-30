@@ -1,9 +1,9 @@
-" Initialize plugins from 'bundle' directory.
-call pathogen#infect()
-
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect
 set nocompatible
+
+" Initialize plugins from 'bundle' directory.
+call pathogen#infect()
 
 " What is the console background? Sets apropriate color scheme
 set background=light
